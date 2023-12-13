@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
 import { Container } from "@mui/material";
+import { KeyboardArrowRight } from "@mui/icons-material";
 
 export default function Create() {
   return (
@@ -19,9 +20,11 @@ export default function Create() {
         type="submit"
         color="secondary"
         onClick={() => console.log("click")}
+        endIcon={<KeyboardArrowRight />}
       >
         submit
       </Button>
+      <br />
     </Container>
   );
 }
