@@ -2,8 +2,8 @@ import { Button, styled } from "@mui/material";
 import { Settings, Add } from "@mui/icons-material";
 
 const Buttons = () => {
-  const BlueButton = styled(Button)({
-    backgroundColor: "skyBlue",
+  const BlueButton = styled(Button)(({ theme }) => ({
+    backgroundColor: theme.palette.otherColor.main,
     color: "#888",
     margin: 5,
     "&:hover": { backgroundColor: "lightblue" },
@@ -11,7 +11,7 @@ const Buttons = () => {
       backgroundColor: "gray",
       color: "white",
     },
-  });
+  }));
 
   return (
     <div>
@@ -19,7 +19,7 @@ const Buttons = () => {
       <Button
         startIcon={<Settings />}
         variant="contained"
-        color="secondary"
+        color="otherColor"
         size="small"
       >
         Contained

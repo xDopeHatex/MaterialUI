@@ -1,10 +1,25 @@
-import { createTheme, Palette } from "@mui/material";
+import { createTheme } from "@mui/material";
 
-interface CustomPalette extends Palette {
-  otherColor?: {
-    main: string;
-  };
+declare module "@mui/material/styles" {
+  interface Palette {
+    otherColor: {
+      main: string;
+    };
+  }
+
+  interface PaletteOptions {
+    otherColor?: {
+      main: string;
+    };
+  }
 }
+
+declare module "@mui/material/Button" {
+  interface ButtonPropsColorOverrides {
+    otherColor: true;
+  }
+}
+
 export const theme = createTheme({
   palette: {
     primary: {
@@ -17,5 +32,5 @@ export const theme = createTheme({
     otherColor: {
       main: "#999",
     },
-  } as CustomPalette,
+  },
 });
